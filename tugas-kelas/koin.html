@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        let jumlahYgDiinginkan = 88
+        let jumlah = 0
+        let koin = [1, 5, 10, 25, 50]
+        let koin_sorted = koin.sort((a, b) => a - b)
+        let tambahTerus = true
+        let koin_dibutuhkan = []
+
+        for(let i=koin_sorted.length-1; i>=0; i--){
+            tambahTerus = true
+            while(tambahTerus){
+                if(jumlah+koin_sorted[i] <= jumlahYgDiinginkan){
+                    jumlah = jumlah + koin_sorted[i]
+                    koin_dibutuhkan.push(koin_sorted[i])
+                } else{
+                    tambahTerus = false
+                }
+            }
+        }
+
+        console.log(koin_dibutuhkan)
+    </script>
+</body>
+</html>
